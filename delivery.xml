@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="clubit_delivery_form" model="ir.ui.view">
+            <field name="name">clubit.delivery.form</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='min_date']" position="replace">
+ 					<field name="min_date"/>
+                </xpath>
+                <xpath expr="//field[@name='stock_journal_id']" position="after">
+ 					<field name="incoterm"/>
+ 					<field name="instruction1"/>
+ 					<field name="instruction2"/>
+ 					<field name="crossdock_overrule"/>
+ 					<field name="groupage_overrule"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="clubit_delivery_move_form" model="ir.ui.view">
+            <field name="name">clubit.delivery.move.form</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_picking_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='date_expected']" position="replace">
+ 					<field name="date_expected"/>
+                </xpath>
+                <xpath expr="//field[@name='date_expected']" position="after">
+ 					<field name="status_code"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
