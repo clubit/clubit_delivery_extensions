@@ -36,8 +36,10 @@ class stock_move(osv.Model):
     _description = "Delivery Move extensions"
     _columns = {
         'status_code': fields.char('Status Code', size=64),
+        'storage_location': fields.selection([('0','Available'), ('B','Back To Back'), ('V','New Product Version'), ('Q','Quality Control')], 'Storage Location'),
+        'edi_sequence': fields.char('Sequence', size=6, help="EDI sequence order."),
     }
 
-
-
-
+    _defaults = {
+      'storage_location': '0',
+    }
