@@ -41,6 +41,9 @@
                 <xpath expr="//field[@name='location_dest_id']" position="after">
  					<field name="storage_location"/>
                 </xpath>
+                <xpath expr="//group[@name='main_grp']" position="inside">
+                    <field name="edi_sequence" groups="base.group_no_one" class="oe_inline"/>
+                </xpath>
             </field>
         </record>
 

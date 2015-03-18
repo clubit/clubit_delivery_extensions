@@ -1,7 +1,6 @@
 from openerp.osv import osv, fields
 from openerp.tools.translate import _
 
-
 class stock_picking(osv.Model):
     _name = "stock.picking"
     _inherit = "stock.picking"
@@ -14,7 +13,6 @@ class stock_picking(osv.Model):
         'instruction2': fields.char('Instruction 2', size=64),
     }
 
-
 class stock_picking_out(osv.Model):
     _name = "stock.picking.out"
     _inherit = "stock.picking.out"
@@ -26,9 +24,6 @@ class stock_picking_out(osv.Model):
         'instruction1': fields.char('Instruction 1', size=64),
         'instruction2': fields.char('Instruction 2', size=64),
     }
-
-
-
 
 class stock_move(osv.Model):
     _name = "stock.move"
@@ -43,3 +38,4 @@ class stock_move(osv.Model):
     _defaults = {
       'storage_location': '0',
     }
+
